@@ -10,7 +10,7 @@ mongoose.Promise = bluebird;
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + "client/build"));
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use("/", routes);
 var db = process.env.MONGODB_URI || "mongodb://localhost/NYTreact";
 // Connect mongoose to our database
